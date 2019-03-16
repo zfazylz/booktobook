@@ -131,7 +131,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'adverts/../static/images')
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',  # бекенд авторизации через ВКонтакте
-
+    'social_core.backends.vk.VKOAuth2',
     'social_core.backends.open_id.OpenIdAuth',
     'social_core.backends.google.GoogleOpenId',
     'social_core.backends.google.GoogleOAuth2',
@@ -142,10 +142,22 @@ AUTHENTICATION_BACKENDS = (
 
 )
 
+SOCIAL_AUTH_AUTHENTICATION_BACKENDS = ['social_core.backends.vk.VKOAuth2']
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
-
+SOCIAL_AUTH_VK_APP_USER_MODE = 2
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '6901791'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '9lW5LV7mXnSjRegM8WwL'
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
-
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'first_name', 'email']
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.social_auth.associate_by_email',  # <--- enable this one
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+)
