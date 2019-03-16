@@ -123,8 +123,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'main:index'
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'adverts/../static/images')
@@ -139,14 +139,20 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.yahoo.YahooOpenId',
     'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
+    'social_core.backends.google.GoogleOpenId',  # for Google authentication
+    'social_core.backends.google.GoogleOAuth2',  # for Google authentication
+    'social_core.backends.github.GithubOAuth2',  # for Github authentication
+    'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
+    'django.contrib.auth.backends.ModelBackend',
 
 )
 
 SOCIAL_AUTH_AUTHENTICATION_BACKENDS = ['social_core.backends.vk.VKOAuth2']
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_VK_APP_USER_MODE = 2
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '6901791'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '9lW5LV7mXnSjRegM8WwL'
+SOCIAL_AUTH_VK_OAUTH2_KEY = '6901791'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = '9lW5LV7mXnSjRegM8WwL'
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'first_name', 'email']
 SOCIAL_AUTH_PIPELINE = (
@@ -161,3 +167,6 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details',
 )
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'booktobook'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '1016321517017'
