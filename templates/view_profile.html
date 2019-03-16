@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!--display user profile info-->
+<h2>My Profile</h2>
+<hr>
+
+<p><a href="{% url 'accounts:edit_profile' %}">Edit Profile</a></p>
+
+<br>
+<p>Username: <b>{{ profile.user }}</b></p>
+<p>First Name:  <b>{{ profile.first_name }}</b></p>
+<p>Last Name:  <b>{{ profile.last_name }}</b></p>
+<p>Date of Birth:  <b>{{ profile.DOB }}</b></p>
+<p>Age:  <b>{{ profile.age }}</b></p>
+<p>Email:  <b>{{ profile.public_email }}</b></p>
+<p>County:  <b>{{ profile.county }}</b></p>
+<p>Town:  <b>{{ profile.town }}</b></p>
+<br>
+
+<p><a href="{% url 'adverts:user_adverts' user.pk %}">View My adverts</a></p>
+<p><a href="{% url 'accounts:inbox' %}">View my messages</a></p>
+
+{% endblock %}
