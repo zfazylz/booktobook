@@ -123,6 +123,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'adverts/../static/images')
 
@@ -138,8 +140,9 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '6901791'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '9lW5LV7mXnSjRegM8WwL'
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'first_name', 'email']
 
