@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
+
             ],
         },
     },
@@ -129,6 +130,8 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'adverts/../static/images')
 
 AUTHENTICATION_BACKENDS = (
+    'social_core.backends.vk.VKOAuth2',  # бекенд авторизации через ВКонтакте
+
     'social_core.backends.open_id.OpenIdAuth',
     'social_core.backends.google.GoogleOpenId',
     'social_core.backends.google.GoogleOAuth2',
@@ -136,6 +139,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.yahoo.YahooOpenId',
     'django.contrib.auth.backends.ModelBackend',
+
 )
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
@@ -145,4 +149,3 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '9lW5LV7mXnSjRegM8WwL'
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'first_name', 'email']
-
