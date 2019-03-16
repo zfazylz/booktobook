@@ -148,26 +148,26 @@ AUTHENTICATION_BACKENDS = (
 
 )
 
-SOCIAL_AUTH_AUTHENTICATION_BACKENDS = ['social_core.backends.vk.VKOAuth2']
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
+# SOCIAL_AUTH_AUTHENTICATION_BACKENDS = ['social_core.backends.vk.VKOAuth2']
+# SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_VK_APP_USER_MODE = 2
-SOCIAL_AUTH_VK_OAUTH2_KEY = '9lW5LV7mXnSjRegM8WwL'
+SOCIAL_AUTH_VK_OAUTH2_KEY = '6901791'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = '9lW5LV7mXnSjRegM8WwL'
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'first_name', 'email']
-SOCIAL_AUTH_PIPELINE = (
-    'social.pipeline.social_auth.social_details',
-    'social.pipeline.social_auth.social_uid',
-    'social.pipeline.social_auth.auth_allowed',
-    'social.pipeline.social_auth.social_user',
-    'social.pipeline.user.get_username',
-    'social.pipeline.social_auth.associate_by_email',  # <--- enable this one
-    'social.pipeline.user.create_user',
-    'social.pipeline.social_auth.associate_user',
-    'social.pipeline.social_auth.load_extra_data',
-    'social.pipeline.user.user_details',
-)
+# SOCIAL_AUTH_PIPELINE = (
+#     'social.pipeline.social_auth.social_details',
+#     'social.pipeline.social_auth.social_uid',
+#     'social.pipeline.social_auth.auth_allowed',
+#     'social.pipeline.social_auth.social_user',
+#     'social.pipeline.user.get_username',
+#     'social.pipeline.social_auth.associate_by_email',  # <--- enable this one
+#     'social.pipeline.user.create_user',
+#     'social.pipeline.social_auth.associate_user',
+#     'social.pipeline.social_auth.load_extra_data',
+#     'social.pipeline.user.user_details',
+# )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'booktobook'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '1016321517017'
-VK_APP_ID = '6901791'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1016321517017-p7gm48n256flbv8lfu6lkl3ouahupcms.apps.googleusercontent.com'
+# 1016321517017-p7gm48n256flbv8lfu6lkl3ouahupcms.apps.googleusercontent.com
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'cyHj4DYhFZ-6bcLwub4WdDN1'
