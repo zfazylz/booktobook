@@ -15,28 +15,8 @@ class Category(models.Model):
         return self.name
 
 
-class Author(models.Model):
-    name = models.CharField(max_length=50)
-    DOB = models.DateField()
-    # Date of Death
-    DOD = models.DateField()
-    biography = models.TextField(max_length=1000, null=True, blank=True)
-
-
-class Book(models.Model):
-    name = models.CharField(max_length=150)
-    description = models.TextField(max_length=1000)
-    year = models.CharField(max_length=4)
-
-
-class BookAuthor(models.Model):
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
-
-
 class Advert(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=True)
     category = models.ForeignKey(Category, null=False, on_delete=models.CASCADE)
     title = models.CharField(max_length=100, null=False)
     description = models.TextField()
