@@ -1,0 +1,87 @@
+/*********************************************************************************
+
+	Template Name: Boighor Bookshop Responsive Bootstrap4 Template
+	Description: Template description
+	Version: 1.0
+	Note: This is custom css. All custom styles (user styles) declare here.
+
+**********************************************************************************/
+.order-1 {
+  margin: auto;
+}
+.regBtn {
+  padding: 0.3rem 0rem 0.5rem 0rem;
+  height: 1rem;
+  display: block;
+  border-radius: 5px;
+  margin-top: 30px;
+  font-weight: 300;
+  background: white;
+  color: #23282d;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.regBtn:hover {
+  background-color: #979797;
+}
+
+.regBtn, .or {
+  width: 40%;
+}
+
+.or {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.6rem;
+  align-items: center;
+}
+
+.or .bar {
+  flex: auto;
+  border: none;
+  height: 1px;
+  background: #ffffff;
+}
+
+.or span {
+  color: #ffffff; /*Color of OR*/
+  font-size: 15px;
+  padding: 0 0.8rem;
+}
+
+.product__info__main h1{
+  letter-spacing: 1px;
+  font-family: 'Roboto', sans-serif;
+}
+.product__overview{
+  font-family: 'Roboto', sans-serif;
+}
+
+.maincontent {
+  margin-top: 50px;
+}
+
+.bradcaump__inner .bradcaump-title {
+
+}
+
+.product:hover .product__content h4 {
+  color: #a18039;
+}
+
+.review-date {
+  margin-top: -10px;
+}
+
+/*Аренда Книги*/
+.heading span{
+  font-size: 20px;
+}
+
+/*Rent Pop-up*/
+.rent__active {
+  position: center;
+}
